@@ -29,10 +29,7 @@
     <!-- CSS Animations -->
     <link href="css/animate.css" rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.png">
-
-    <!-- Mordernizr -->
+    <!-- Modernizr -->
     <script src="js/modernizr-2.6.2.min.js"></script>
 
     <!-- Responsivity for older IE -->
@@ -320,9 +317,17 @@ _________________________________________________________ -->
 _________________________________________________________ -->
 
         <div class="section" id="map">
-            <iframe width="1400" height="340" frameborder="0" style="border:0"
-                    src="https://www.google.com/maps/embed/v1/place?q=Seattle%2C%20WA%2C%20United%20States&key=AIzaSyDBw8U6kSFI81aHmdBqe-uA64ElLVS2DkM" allowfullscreen></iframe>
+
         </div>
+        <script>
+            var map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: 47.6062, lng: -122.3321},
+                    zoom: 13
+                });
+            }
+        </script>
         <!-- /.section -->
 
         <!-- *** MAP END *** -->
@@ -391,7 +396,9 @@ _________________________________________________________ -->
     <!-- main js file -->
     <script src="js/front.js"></script>
 
-    
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBw8U6kSFI81aHmdBqe-uA64ElLVS2DkM&callback=initMap"
+            async defer></script>
 
 
 
